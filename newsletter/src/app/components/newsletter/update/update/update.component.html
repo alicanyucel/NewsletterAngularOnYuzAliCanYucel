@@ -1,0 +1,26 @@
+<div class="container">
+    <form #updateform="ngForm" (ngSubmit)="update()">
+        <div class="form-group">
+            <label for="title">Haber Başlığı</label>
+            <input type="text" #name name="name" required minlength="5" [(ngModel)]="updatemodel.name" class="form-control" [appCheckInputValid]="name">
+       <div class="invalid-feedback">
+        HABER BAŞLIĞI BOŞ BIRAKILAMAZ
+       </div>
+        </div>
+        <div class="form-group mt-2">
+            <label for="description">Haber İçeriği</label>
+            <textarea rows="10" #description name="description" required minlength="5" [(ngModel)]="updatemodel.description" class="form-control" [appCheckInputValid]="description"></textarea>
+            <div class="invalid-feedback">
+                İÇERİK  BOŞ BIRAKILAMAZ
+               </div>
+        </div>
+        <div class="form-group mt-2">
+            <button class="btn btn-outline-primary w-100" [disabled]="!updateform.valid">
+                <i class="fas fa-save"></i> Güncelle</button>
+        </div>
+        <div class="form-group mt-2">
+            <button class="btn btn-outline-primary w-100" [disabled]="!updateform.valid">
+                <i class="fas fa-save"></i>Ana Sayfaya Dön</button>
+        </div>
+    </form>
+</div>

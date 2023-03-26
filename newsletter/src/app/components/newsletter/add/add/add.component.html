@@ -1,0 +1,22 @@
+<div class="container">
+    <form #addform="ngForm" (ngSubmit)="add(addform)">
+        <div class="form-group">
+            <label for="title">Haber Başlığı</label>
+            <input type="text" #name name="name" required minlength="5" ngModel class="form-control" [appCheckInputValid]="name">
+       <div class="invalid-feedback">
+        HABER BAŞLIĞI BOŞ BIRAKILAMAZ
+       </div>
+        </div>
+        <div class="form-group mt-2">
+            <label for="description">Haber İçeriği</label>
+            <textarea rows="10" #description name="description" required minlength="5" ngModel class="form-control" [appCheckInputValid]="description"></textarea>
+            <div class="invalid-feedback">
+                İÇERİK  BOŞ BIRAKILAMAZ
+               </div>
+        </div>
+        <div class="form-group mt-2">
+            <button class="btn btn-outline-primary w-100" [disabled]="!addform.valid">
+                <i class="fas fa-save"></i> Kaydet</button>
+        </div>
+    </form>
+</div>
